@@ -1,7 +1,7 @@
-set PDK_PATH ./../ref
+set PDK_PATH <PATH_TO_PDK>
 
-read_verilog {./../DC/results/seq_detector_110.mapped.v} -library SEQ_DETECT_LIB -design seq_detector_110 -top seq_detector_110
-read_sdc ./../CONSTRAINTS/full_adder.sdc
+read_verilog design seq_detector_110
+read_sdc <READ_SDC>
 
 # Set the current design
 current_design seq_detector_110
