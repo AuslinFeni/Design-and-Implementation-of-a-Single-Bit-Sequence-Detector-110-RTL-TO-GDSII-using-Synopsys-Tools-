@@ -1,6 +1,6 @@
-set RTL_SOURCE_FILES ./../rtl/seq_detector_110_rtl.v
+set RTL_SOURCE_FILES <PATH>/seq_detector_110_rtl.v
 
-define_design_lib WORK -path ./WORK
+define_design_lib <LIB_PATH>
 
 #set_dont_use [get_lib_cells */FADD*]
 #set_dont_use [get_lib_cells */HADD*]
@@ -17,11 +17,8 @@ set DESIGN_NAME “seq_detector_110”
 elaborate ${DESIGN_NAME}
 current_design ${DESIGN_NAME}
 
-#read_sdc ./../CONSTRAINTS/full_adder.sdc
-
 compile
-
 #compile_ultra
 #report_timing
-write -format verilog -hierarchy -output ${RESULTS_DIR}/seq_detector_110.mapped.v
+write -format verilog -hierarchy -output <PATH>/seq_detector_110.mapped.v
 
