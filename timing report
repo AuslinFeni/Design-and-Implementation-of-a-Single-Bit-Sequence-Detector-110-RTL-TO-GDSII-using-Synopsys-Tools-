@@ -6,7 +6,6 @@ Report : timing
         -max_paths 1
         -report_by design
 Design : seq_detector_110
-Version: V-2023.12-SP4
 Date   : Sun Mar 16 12:22:30 2025
 ****************************************
 
