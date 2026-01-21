@@ -1,4 +1,3 @@
-source -echo -verbose ./rm_setup/dc_setup.tcl
 set RTL_SOURCE_FILES ./../rtl/seq_detector_110_rtl.v
 
 define_design_lib WORK -path ./WORK
