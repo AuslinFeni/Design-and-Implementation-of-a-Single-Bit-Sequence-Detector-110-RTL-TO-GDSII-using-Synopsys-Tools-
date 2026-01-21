@@ -3,7 +3,6 @@ icc2_shell> report_power
 Report : power
         -significant_digits 2
 Design : seq_detector_110
-Version: V-2023.12-SP4
 Date   : Sun Mar 16 12:24:07 2025
 ****************************************
 Information: Activity for scenario func::nom was cached, no propagation required. (POW-005)
