@@ -44,7 +44,7 @@ route_opt
 #
 ######################################
 # OUTPUTS
-write_gds ./results/seq_det.gds
-write_verilog ./results/seq_det.routed.v
-write_sdc -output ./results/seq_det.routed.sdc
-write_parasitics -format spef -output ./results/seq_det_${scenario1}.spef
+write_gds <PATH>/seq_det.gds
+write_verilog <PATH>/seq_det.routed.v
+write_sdc -output <PATH>/seq_det.routed.sdc
+write_parasitics -format spef -output <PATH>/seq_det_${scenario1}.spef
