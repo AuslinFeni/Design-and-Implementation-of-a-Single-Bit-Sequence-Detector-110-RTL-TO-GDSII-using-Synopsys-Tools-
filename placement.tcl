@@ -11,31 +11,6 @@ current_scenario func::nom
 
 source ./../CONSTRAINTS/full_adder.sdc
 
-# Library cell names updated
-set_dont_use [get_lib_cells saed32rvt_tt0p78vn40c/FADD*]
-set_dont_use [get_lib_cells saed32rvt_tt0p78vn40c/HADD*]
-set_dont_use [get_lib_cells saed32rvt_tt0p78vn40c/AO*]
-set_dont_use [get_lib_cells saed32rvt_tt0p78vn40c/OA*]
-set_dont_use [get_lib_cells saed32rvt_tt0p78vn40c/NAND*]
-set_dont_use [get_lib_cells saed32rvt_tt0p78vn40c/XOR*]
-set_dont_use [get_lib_cells saed32rvt_tt0p78vn40c/NOR*]
-set_dont_use [get_lib_cells saed32rvt_tt0p78vn40c/XNOR*]
-set_dont_use [get_lib_cells saed32rvt_tt0p78vn40c/MUX*]
-
-current_corner nom
-current_scenario func::nom
-
-set parasitic1 "p1"
-set tluplus_file$parasitic1 "$PDK_PATH/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus"
-set layer_map_file$parasitic1 "$PDK_PATH/tech/star_rcxt/saed32nm_tf_itf_tluplus.map"
-
-set parasitic2 "p2"
-set tluplus_file$parasitic2 "$PDK_PATH/tech/star_rcxt/saed32nm_1p9m_Cmin.tluplus"
-set layer_map_file$parasitic2 "$PDK_PATH/tech/star_rcxt/saed32nm_tf_itf_tluplus.map"
-
-read_parasitic_tech -tlup $tluplus_filep1 -layermap $layer_map_filep1 -name p1
-read_parasitic_tech -tlup $tluplus_filep2 -layermap $layer_map_filep2 -name p2
-
 set_parasitic_parameters -late_spec $parasitic1 -early_spec $parasitic2
 set_app_options -name place.coarse.continue_on_missing_scandef -value true
 
