@@ -1,0 +1,2 @@
+# Design-and-Implementation-of-a-Single-Bit-Sequence-Detector-110-RTL-TO-GDSII-using-Synopsys-Tools-
+This repository contains the complete RTL-to-GDSII implementation of a Sequence Detector for the binary pattern ‘110’ using Synopsys VLSI design tools. The project covers Verilog-based RTL design, functional verification, logic synthesis using Design Compiler, physical design using ICC2, and generation of layout (GDSII). 
