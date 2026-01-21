@@ -1,0 +1,26 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : V-2023.12-SP4
+// Date      : Sun Mar 16 09:33:30 2025
+/////////////////////////////////////////////////////////////
+
+
+module seq_detector_110 ( clk, rst, in_bit, detected );
+  input clk, rst, in_bit;
+  output detected;
+  wire   N11, n1, n7, n8, n9, n10;
+  wire   [1:0] state;
+  wire   [1:0] next_state;
+
+  DFFARX1_RVT \state_reg[0]  ( .D(next_state[0]), .CLK(clk), .RSTB(n1), .Q(
+        state[0]), .QN(n8) );
+  DFFARX1_RVT \state_reg[1]  ( .D(next_state[1]), .CLK(clk), .RSTB(n1), .Q(
+        state[1]), .QN(n7) );
+  DFFARX1_RVT detected_reg ( .D(N11), .CLK(clk), .RSTB(n1), .Q(detected) );
+  MUX21X1_RVT U11 ( .A1(n8), .A2(n9), .S0(n7), .Y(next_state[1]) );
+  AND2X1_RVT U12 ( .A1(state[0]), .A2(in_bit), .Y(n9) );
+  AO21X1_RVT U13 ( .A1(n10), .A2(in_bit), .A3(N11), .Y(next_state[0]) );
+  XNOR2X1_RVT U14 ( .A1(state[1]), .A2(state[0]), .Y(n10) );
+  INVX0_RVT U15 ( .A(rst), .Y(n1) );
+  NOR3X0_RVT U16 ( .A1(in_bit), .A2(state[0]), .A3(n7), .Y(N11) );
+endmodule
