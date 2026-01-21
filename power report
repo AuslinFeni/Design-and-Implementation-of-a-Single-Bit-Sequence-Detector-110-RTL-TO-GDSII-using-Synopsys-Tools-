@@ -1,0 +1,55 @@
+icc2_shell> report_power
+****************************************
+Report : power
+        -significant_digits 2
+Design : seq_detector_110
+Version: V-2023.12-SP4
+Date   : Sun Mar 16 12:24:07 2025
+****************************************
+Information: Activity for scenario func::nom was cached, no propagation required. (POW-005)
+Mode: func
+Corner: nom
+Scenario: func::nom
+Voltage: 0.85
+Temperature: 125.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1fF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1pW
+Leakage Power Unit   : 1pW
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+Warning: Power table extrapolation (extrapolation mode) for port D on cell state_reg[0] for parameter Tinp. Lowest table value = inf, highest table value = inf, value = 0.076447 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port D on cell state_reg[1] for parameter Tinp. Lowest table value = inf, highest table value = inf, value = 0.036201 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port D on cell detected_reg for parameter Tinp. Lowest table value = inf, highest table value = inf, value = 0.040855 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port QN on cell detected_reg for parameter Cout. Lowest table value = 0.000100, highest table value = 0.008000, value = 0.000000 (POW-046)
+
+  Cell Internal Power    = 2.32e+07 pW ( 94.6%)
+  Net Switching Power    = 1.32e+06 pW (  5.4%)
+Total Dynamic Power      = 2.46e+07 pW (100.0%)
+
+Cell Leakage Power       = 9.19e+07 pW
+
+
+  Attributes
+  ----------
+      u  -  User defined power group
+      i  -  Includes clock pin internal power
+
+Power Group         Internal Power        Switching Power          Leakage Power            Total Power    (   %  )    Attrs
+-----------------------------------------------------------
+io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+black_box                 0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+clock_network             2.40e+07               1.02e+06               8.05e+06               3.30e+07    ( 28.4%)        i
+register                 -2.37e+06               1.35e+05               5.48e+07               5.25e+07    ( 45.1%)         
+sequential                0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+combinational             1.63e+06               1.68e+05               2.91e+07               3.09e+07    ( 26.5%)         
+-----------------------------------------------------------Total                    2.32e+07 pW            1.32e+06 pW            9.19e+07 pW            1.16e+08 pW
